@@ -27,19 +27,26 @@ export function QuizSection() {
 
   useEffect(() => {
     const loadInitialData = async () => {
-      const [questionsResponse, leaderboardResponse] = await Promise.all([
-        fetch("/api/quiz/questions", { cache: "no-store" }),
-        fetch("/api/quiz/leaderboard", { cache: "no-store" })
-      ]);
-
-      const questionsData = await questionsResponse.json();
-      const leaderboardData = await leaderboardResponse.json();
-
-      setQuestions(questionsData.questions ?? []);
-      setAnswers(new Array((questionsData.questions ?? []).length).fill(-1));
-      setLeaderboard(leaderboardData.entries ?? []);
+      try {
+        const questionsResponse = await fetch("/api/quiz/questions", { cache: "no-store" });
+        const questionsData = await questionsResponse.json();
+  
+        setQuestions(questionsData.questions ?? []);
+        setAnswers(new Array((questionsData.questions ?? []).length).fill(-1));
+      } catch {
+        setError("Unable to load quiz questions right now.");
+      }
+  
+      try {
+        const leaderboardResponse = await fetch("/api/quiz/leaderboard", { cache: "no-store" });
+        const leaderboardData = await leaderboardResponse.json();
+  
+        setLeaderboard(leaderboardData.entries ?? []);
+      } catch {
+        console.error("Leaderboard failed to load.");
+      }
     };
-
+  
     void loadInitialData();
   }, []);
 
