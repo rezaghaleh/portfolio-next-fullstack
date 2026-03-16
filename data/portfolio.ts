@@ -110,14 +110,7 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "Python", "Swift", "SwiftUI"],
     githubUrl: "https://github.com/rezaghaleh/billbox_app/tree/main/BillBox"
   },
-  {
-    name: "E-Commerce Site",
-    description:
-      "I designed and developed a portfolio website, reza-ghaleh.com, using HTML, CSS, and JavaScript to create a sleek, responsive platform that highlights my projects and skills. The site features intuitive navigation and dynamic visuals, showcasing my expertise in web development and design.",
-    tech: ["JavaScript", "HTML5", "CSS3"],
-    githubUrl: "https://reza-ghaleh.com",
-    liveUrl: "https://reza-ghaleh.com"
-  },
+
   {
     name: "PropertySync",
     description:
@@ -125,6 +118,29 @@ export const projects: Project[] = [
     tech: ["Java"],
     githubUrl:
       "https://github.com/rezaghaleh/PropertySync/tree/main/PropertySync/PropertySync"
+  },
+  {
+    name: "Personal Portfolio Website",
+    description:
+      "Built a full-stack portfolio using Next.js and React with a backend-powered coding quiz, API routes, and a database leaderboard.",
+    tech: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Vercel"],
+    githubUrl: "https://github.com/rezaghaleh/portfolio-next-fullstack",
+    liveUrl: "https://reza-ghaleh.com"
+  },
+  {
+    name: "ShadeMaster Blinds Website",
+    description:
+      "Developed and deployed a responsive business website showcasing products, services, and project galleries.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    githubUrl: "https://github.com/rezaghaleh/shademaster-website",
+    liveUrl: "https://shade-master.ca"
+  },
+  {
+    name: "Workout Tracker API",
+    description:
+      "RESTful backend API built with Java and Spring Boot for tracking workouts, exercises, and training progress.",
+    tech: ["Java", "Spring Boot", "Spring MVC", "JPA/Hibernate", "SQL", "Maven"],
+    githubUrl: "#"
   }
 ];
 
